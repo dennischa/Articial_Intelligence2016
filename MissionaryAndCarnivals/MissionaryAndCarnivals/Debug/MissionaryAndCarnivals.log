@@ -1,0 +1,4 @@
+﻿  a_algo.cpp
+d:\알고리즘\missionaryandcarnivals\missionaryandcarnivals\a_algo.cpp(85): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  MissionaryAndCarnivals.vcxproj -> D:\알고리즘\MissionaryAndCarnivals\Debug\MissionaryAndCarnivals.exe
+  MissionaryAndCarnivals.vcxproj -> D:\알고리즘\MissionaryAndCarnivals\Debug\MissionaryAndCarnivals.pdb (Full PDB)
