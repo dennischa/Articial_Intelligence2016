@@ -12,13 +12,15 @@ public:
 	int p[5][5] = { 0, };
 	int x, y;
 	int g = 0;
+	int pastdir = -1;
+	int path[10] = {0, };
 
 
-	Puzzle(int arr[5][5],int by, int bx, int gn)
+	Puzzle(int arr[5][5], int by, int bx, int gn)
 	{
-		for (int i = 1; i <= 3; i++){
-			for (int j = 1; j <= 3; j++){
-					p[i][j] = arr[i][j];
+		for (int i = 1; i <= 3; i++) {
+			for (int j = 1; j <= 3; j++) {
+				p[i][j] = arr[i][j];
 			}
 		}
 		x = bx;
@@ -65,9 +67,16 @@ public:
 	// 0 :left , 1: right, 2: up, 3: down
 	Puzzle setChildPuzzle(int n) {
 		Puzzle cp(p, y, x,g + 1);
+		for (int i = 0; i <= cp.g;i++)
+			cp.path[i] = path[i];
+		cp.path[g + 1] = n;
+
+		cp.pastdir = n;
 		
 		int x = cp.x;
 		int y = cp.y;
+
+		
 
 		switch (n) {
 		case 0:
@@ -93,5 +102,14 @@ public:
 		}
 
 		return cp;
+	}
+
+	void printPuzzle() {
+		for (int i = 1; i <= 3; i++) {
+			for (int j = 1; j <= 3; j++) {
+				cout << p[i][j]<< " ";
+			}
+			cout << endl;
+		}
 	}
 };
